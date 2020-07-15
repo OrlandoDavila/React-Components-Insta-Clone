@@ -7,8 +7,13 @@ const Posts = (props) => {
   const { likePost, posts } = props;
 
   return (
-    <div className="posts-container-wrapper">
-      {/* map through the posts here to return a Post component */}
+    <div className="posts-container-wrapper"> 
+      {
+        posts.map (postData => {
+          return <Post post = {postData} key = {postData.id} likePost = {likePost} />
+        }) 
+      }
+
       {/* Check the implementation of Post to see what props it requires! */}
     </div>
   );
